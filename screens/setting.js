@@ -1,12 +1,13 @@
 import React from "react";
-import Header from './screens/header';
+
 import { Text } from "react-native-paper";
 import { View } from "react-native";
-const setting=()=>{(<View>
-<Header title='settings'>
+import { Typography } from "@mui/material";
+const Setting=()=>{(<View>
 
-</Header>
+<Text>hello settings page</Text>
+
 </View>
 
 );};
-export default setting;
+export default Setting;

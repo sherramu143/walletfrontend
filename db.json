@@ -1,0 +1,190 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Juliet Oma",
+      "email": "julie@yahoo.com",
+      "number": "08100000000",
+      "password": "123456789"
+    },
+    {
+      "id": 2,
+      "name": "James Williams",
+      "email": "jameswilly@gmail.com",
+      "number": "08111111111"
+    },
+    {
+      "id": 3,
+      "name": "Ahmed Ali",
+      "email": "ahmedali012@gmail.com",
+      "number": "09022222222"
+    },
+    {
+      "id": 4,
+      "name": "Grace Funsho",
+      "email": "gracefunsho@gmail.com",
+      "number": "09033333333"
+    },
+    {
+      "id": "e0f5",
+      "email": "test1@email.com",
+      "password": "123456789"
+    },
+    {
+      "id": "4f64",
+      "email": "test1@email.com",
+      "password": "123456789"
+    },
+    {
+      "id": "99ca",
+      "email": "test1@email.com",
+      "password": "123456789"
+    },
+    {
+      "id": "6f8a",
+      "email": "julie@yahoo.com",
+      "password": "123456789"
+    },
+    {
+      "id": "de30",
+      "email": "julie@yahoo.com",
+      "password": "123456789"
+    },
+    {
+      "id": "365a",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "558b",
+      "email": "test1@email.com",
+      "password": "123456789"
+    },
+    {
+      "id": "ed09",
+      "email": "julie@yahoo.com",
+      "password": "123456789"
+    },
+    {
+      "id": "1475",
+      "email": "test1@email.com",
+      "password": "123456789"
+    },
+    {
+      "id": "d7ab",
+      "email": "test1@email.com",
+      "password": "123456789"
+    },
+    {
+      "id": "89b5",
+      "email": "test1@email.com",
+      "password": "123456789"
+    },
+    {
+      "id": "e552",
+      "email": "test1@email.com",
+      "password": "12345679"
+    },
+    {
+      "id": "3ba0",
+      "email": "julie@yahoo.com",
+      "password": "123456789"
+    },
+    {
+      "id": "1670",
+      "email": "test1@email.com",
+      "password": "123456789"
+    },
+    {
+      "id": "2a62",
+      "email": "test1@email.com",
+      "password": "123456789"
+    },
+    {
+      "id": "b5cd",
+      "email": "test1@email.com",
+      "password": "123456789"
+    },
+    {
+      "id": "6faa",
+      "email": "test1@email.com",
+      "password": "123456789"
+    },
+    {
+      "id": "574c",
+      "email": "test1@email.com",
+      "password": "123456789"
+    },
+    {
+      "id": "7b24",
+      "email": "test1@email.com",
+      "password": "123456789"
+    },
+    {
+      "id": "12f0",
+      "email": "test1@email.com",
+      "password": "123456789"
+    },
+    {
+      "id": "ad72"
+    },
+    {
+      "id": "e4bf"
+    },
+    {
+      "id": "6889",
+      "email": "jameswilly@gmail.com",
+      "password": "123456784"
+    },
+    {
+      "id": "e8ca"
+    },
+    {
+      "id": "0b1e"
+    },
+    {
+      "id": "dfbd"
+    },
+    {
+      "id": "be69"
+    },
+    {
+      "id": "f388",
+      "emai": "ramusher143@email.com",
+      "password": "7995727830"
+    },
+    {
+      "id": "da24",
+      "email": "test1@email.com",
+      "password": "123456789"
+    },
+    {
+      "id": "9b0e",
+      "email": "raju@gmail.com",
+      "password": "23455678"
+    },
+    {
+      "id": "4d96",
+      "email": "test1@email.com",
+      "password": "123456789"
+    },
+    {
+      "id": "229c"
+    },
+    {
+      "id": "c1d5"
+    },
+    {
+      "id": "1",
+      "name": "hemanth",
+      "email": "hemanth@email.com",
+      "password": "hemath1234"
+    },
+    {
+      "id": "9e51"
+    },
+    {
+      "id": "1"
+    }
+  ]
+}

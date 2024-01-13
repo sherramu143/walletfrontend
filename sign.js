@@ -15,7 +15,7 @@ const Sign = () => {
           defaultValue={text}
         />
          <TextInput
-          style={{height: 40}}
+          style={{height:40}}
           placeholder="Type here to translate!"
           onChangeText={newText => setText(newText)}
           defaultValue={text}
