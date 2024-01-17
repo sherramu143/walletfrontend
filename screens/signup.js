@@ -34,9 +34,7 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function SignUp(navigate) {
- /* const [newItem, setNewItem] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');*/
+ 
   const [post, setPost]=useState({
     id:1,
     firstName:'',
@@ -56,9 +54,7 @@ export default function SignUp(navigate) {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    //axios.put("http://localhost:8000/users",{post})
-     // Assuming you have the user ID in the state or another variable, replace 'userId' with the actual user ID
-  
+    
 
   axios.put(`http://localhost:8000/users`, post)
     .then(res=>console.log(res.data))
@@ -68,40 +64,18 @@ export default function SignUp(navigate) {
         console.error('AxiosError:', error)}});
    
 
-    //const data = new FormData(event.currentTarget);
-    //console.log({
-      //email: data.get('email'),
-      //password: data.get('password'),
+
 
     }
    
   
-    //const additem=async ()=>{
-
-      //const apiEndpoint = 'http://localhost:8000/users';
-
-   /* try {
-      const response = await axios.post(apiEndpoint, { email,password });
-      const apiEndpoint = 'http://localhost:8000/users';
-      const addItemResponse = await axios.post(apiEndpoint, { name: newItem });
-      console.log('Item added successfully:', addItemResponse.data);
-
-     // if (response.status === 201) {
-        console.log('Item added successfully:', response.data);
-        fetchData(); // Refresh the data after adding an item
-      } 
-      
-    catch (error) {
-      console.error('Error during item addition:', error.message);
-    }
-    }
+    
 
 
 
 
 
 
-  //};*/
  
 
   return (
@@ -198,5 +172,4 @@ export default function SignUp(navigate) {
         <Copyright sx={{ mt: 5 }} />
       </Container>
     </ThemeProvider>
-  );
-}
+  );}

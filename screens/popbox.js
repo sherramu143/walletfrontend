@@ -19,7 +19,7 @@ const  datatable1= ({ visible, onClose, onConfirm }) => {
 
         try {
           // Make an API request to update user data
-          const response = await axios.patch('http://localhost:3000/users/1',{
+          const response = await axios.patch('http://localhost:3000/users/9b0e',{
             name: updatedName,
             email: updatedEmail,
             password: updatedPassword,

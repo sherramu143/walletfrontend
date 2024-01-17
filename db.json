@@ -31,21 +31,6 @@
       "password": "123456789"
     },
     {
-      "id": "4f64",
-      "email": "test1@email.com",
-      "password": "123456789"
-    },
-    {
-      "id": "99ca",
-      "email": "test1@email.com",
-      "password": "123456789"
-    },
-    {
-      "id": "6f8a",
-      "email": "julie@yahoo.com",
-      "password": "123456789"
-    },
-    {
       "id": "de30",
       "email": "julie@yahoo.com",
       "password": "123456789"
@@ -58,11 +43,6 @@
     {
       "id": "558b",
       "email": "test1@email.com",
-      "password": "123456789"
-    },
-    {
-      "id": "ed09",
-      "email": "julie@yahoo.com",
       "password": "123456789"
     },
     {
@@ -88,7 +68,12 @@
     {
       "id": "3ba0",
       "email": "julie@yahoo.com",
-      "password": "123456789"
+      "password": "ramu143",
+      "name": {
+        "id": "3ba0",
+        "email": "julie@yahoo.com",
+        "password": "123456789"
+      }
     },
     {
       "id": "1670",
@@ -149,24 +134,30 @@
       "id": "be69"
     },
     {
-      "id": "f388",
-      "emai": "ramusher143@email.com",
-      "password": "7995727830"
-    },
-    {
       "id": "da24",
       "email": "test1@email.com",
-      "password": "123456789"
+      "password": {
+        "id": "da24",
+        "email": "test1@email.com",
+        "password": "123456789"
+      },
+      "name": "rfu"
     },
     {
       "id": "9b0e",
-      "email": "raju@gmail.com",
-      "password": "23455678"
+      "email": "",
+      "password": "",
+      "name": ""
     },
     {
       "id": "4d96",
       "email": "test1@email.com",
-      "password": "123456789"
+      "password": {
+        "id": "4d96",
+        "email": "test1@email.com",
+        "password": "123456789"
+      },
+      "name": "rajeshwar"
     },
     {
       "id": "229c"
@@ -175,16 +166,7 @@
       "id": "c1d5"
     },
     {
-      "id": "1",
-      "name": "hemanth",
-      "email": "hemanth@email.com",
-      "password": "hemath1234"
-    },
-    {
       "id": "9e51"
-    },
-    {
-      "id": "1"
     }
   ]
 }

@@ -1,20 +1,18 @@
-// components/Header.js
-
-import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import React from "react";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import Icon from "react-native-vector-icons/Ionicons";
 
 const Header = ({ title, navigation }) => {
   return (
     <View style={styles.header}>
       <Text style={styles.title}>{title}</Text>
-      <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+      <TouchableOpacity onPress={() => navigation.navigate("Home")}>
         <Icon name="home" size={30} color="#fff" style={styles.icon} />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('signup')}>
+      <TouchableOpacity onPress={() => navigation.navigate("signup")}>
         <Icon name="log-in" size={30} color="#fff" style={styles.icon} />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('Settings')}>
+      <TouchableOpacity onPress={() => navigation.navigate("Settings")}>
         <Icon name="settings" size={30} color="#fff" style={styles.icon} />
       </TouchableOpacity>
     </View>
@@ -23,15 +21,15 @@ const Header = ({ title, navigation }) => {
 
 const styles = StyleSheet.create({
   header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     height: 60,
-    backgroundColor: '#3498db',
+    backgroundColor: "#3498db",
     padding: 10,
   },
   title: {
-    color: '#fff',
+    color: "#fff",
     fontSize: 18,
   },
   icon: {
@@ -40,6 +38,3 @@ const styles = StyleSheet.create({
 });
 
 export default Header;
-
-
-
