@@ -1,13 +1,12 @@
 import { Text, View, TextInput, Button, text } from "react-native";
 import { useState, useEffect } from "react";
-/*import axios from 'axios';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import Menu from '@mui/material';
-
-import { AppBar ,IconButton} from '@mui/material';
-import Toolbar from '@mui/material';/*/
+import { login } from "./redux/actions/authActions";
+import { useDispatch } from "react-redux";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useNavigation } from "@react-navigation/native";
+import { TextField } from "@mui/material";
+import { FormControlLabel } from "@mui/material";
+import Checkbox from '@mui/material/Checkbox';
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -18,45 +17,89 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "@react-navigation/native";
 import axios from "axios";
 import Avatar from "@mui/material/Avatar";
+import { Alert } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Signin = ({ navigation }) => {
   const [email, setEmail] = useState("");
-
+  const[user,setUser]=React.useState(null);
   const [password, setPassword] = useState("");
   const [Data, setData] = useState("");
-  React.useEffect(() => {
-    axios
-      .get("http://localhost:3000/users")
-      .then((res) => console.log(res.data));
-  }, []);
+  const [dataToSend, setDataToSend] = useState({
+    email: '',
+    password: '',
+  });
+  React.useEffect(()=>{
+    checkForUser();
+  },[]);
+  
+  const dispatch=useDispatch();
+  const checkForUser=async ()=>{
+    const storedUser=await
+    AsyncStorage.getItem('user');
+    if(storedUser) {
+      navigation.navigate('');
+    }}
 
-  const handlesignin = async () => {
-    const apiEndpoint = "http://localhost:8000/users";
+  
+  const handlesignin=async (event)=>{
+    event.preventDefault();
+   // const data=new FormData(event.currentTarget);
+   setDataToSend({
+    email,
+    password,
+  });
+
+    console.log("credentials are:",dataToSend);
+    try{
+      const response=await axios
+      .post('http://localhost:3000/api/auth/login',dataToSend);
+    
+    const token=response.data;
+console.log('TOKEN',token);
+await AsyncStorage.setItem('user',JSON.stringify({
+  email:dataToSend.email,
+  token:token,
+
+}));
+dispatch(login(dataToSend.email));
+setUser({email:dataToSend.email,
+token:token,});return(
+<View>
+<Text>{`Token Display Screen`}</Text>
+{token && <Text>{`Token: ${token}`}</Text>}
+</View>)
+
+//navigation.navigate('tokendisplay');
+
+  }
+  catch(error){
+    console.error("error signing in",error.message);
+    Alert.alert('sigin in failed invalide username and password');
+  };
+  }
+
+  
+  //React.useEffect(() => {
+    //axios
+      //.get("http://localhost:3000/users")
+      //.then((res) => console.log(res.data));
+  //}, []);
+
+  /*const handlesignin = async () => {
+    const apiEndpoint = "http://localhost:3000/users";
 
     try {
       const response = await axios.get(apiEndpoint, { email, password });
 
-      console.log("Login successful:", response.data);
+
+     // console.log("Login successful:", response.data);
     } catch (error) {
       console.error("Error during login:");
     }
   };
-
-  function Copyright(props) {
-    return (
-      <Typography
-        variant="body2"
-        color="text.secondary"
-        align="center"
-        {...props}
-      >
-        <Text>Copyright © </Text>
-        {new Date().getFullYear()}
-        {"."}
-      </Typography>
-    );
-  }
-
+*/
+  
   const [isPopupVisible, setPopupVisible] = useState(false);
 
   return (
@@ -120,100 +163,71 @@ const Signin = ({ navigation }) => {
             height: 450,
             marginTop: 120,
           }}
-        >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}></Avatar>
-          <Text style={{ marginTop: 20, fontSize: 25, fontWeight: 650 }}>
-            Sign In
-          </Text>
+        ><Text style={{ marginTop: 20, fontSize: 25, fontWeight: 650 }}>
+        Sign In
+      </Text>
+         <View component="form"  noValidate sx={{ mt: 1 }}>
+            <TextInput
+            style={{width:100,backgroundColor: "white",
+            fontSize: 16,marginTop: 20,
+           
+            
 
-          <Text
-            style={{
-              //fontweight:20,
-              marginTop: 25,
-              fontSize: 20,
-              marginRight: 127,
-              fontWeight: 350,
-            }}
-          >
-            enter email id
-          </Text>
-          <TextInput
-            style={{
-              backgroundColor: "white",
-              fontSize: 16,
-              marginTop: 5,
-              borderRadius: 8,
+            borderWidth: 0.5,
+            height: 40,
+            width: 260,}}
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              label="Email Address"
+              name="email"
+              autoComplete="email"
+              autoFocus
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);}}
+            />
+            <TextInput
+            style={{width:100,backgroundColor: "white",
+            fontSize: 16,
+           
+           
 
-              borderWidth: 0.5,
-              height: 40,
-              width: 260,
-            }}
-            value={email}
-            //onChangeText={(text)=setemail(text)}
-
-            placeholder="email id"
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-            id="email"
-            label="password"
-            autoFocus
-            required
-          ></TextInput>
-
-          <Text
-            style={{
-              //fontweight:20,
-              marginTop: 25,
-              fontSize: 20,
-              marginRight: 100,
-              fontWeight: 350,
-            }}
-          >
-            enter password
-          </Text>
-          <TextInput
-            secureTextEntry
-            label="password"
-            autoFocus
-            style={{
-              backgroundColor: "white",
-              fontSize: 16,
-              marginTop: 5,
-              fontWeight: 250,
-              borderRadius: 8,
-              borderWidth: 0.5,
-              height: 40,
-              width: 260,
-            }}
-            id="password"
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-            placeholder="password"
-          ></TextInput>
-
-          <Link to="/" style={{ color: "red", marginTop: 5 }}>
-            forgot password?
-          </Link>
-
-          <View
-            style={{
-              marginTop: 20,
-              width: 100,
-              height: 70,
-            }}
-          >
-            <Button title="Sign In" onPress={handlesignin}></Button>
-            <View style={{ marginTop: 10 }}></View>
-          </View>
-        </View>
-        <View>
-          <Copyright sx={{ mt: 5 }} />
-        </View>
+            borderWidth: 0.5,
+            height: 40,
+            width: 260,
+          marginTop:10}}
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);}}
+            />
+           <View style={{width:260,marginTop:20}}>
+            <Button
+            
+              type="submit"
+              title="submit"
+              variant="contained"
+             
+              onPress={handlesignin}
+            />
       </View>
-    </Box>
+
+        </View>
+       
+      </View></View>
+      </Box>
+    
   );
 };
+
+
 export default Signin;
